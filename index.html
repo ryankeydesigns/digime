@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#070b14">
+  <meta name="description" content="Ryan Key — digital name card and GitHub profile.">
+  <title>Ryan Key — Digital Name Card</title>
+  <style>
+    :root{color-scheme:dark;--bg:#070b14;--panel:rgba(13,21,36,.78);--line:rgba(121,191,255,.18);--text:#eef7ff;--muted:#90a4bb;--cyan:#62e6ff;--violet:#8b7cff}
+    *{box-sizing:border-box}html,body{min-height:100%;margin:0}body{display:grid;place-items:center;overflow:hidden;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+    body:before{content:"";position:fixed;inset:-25%;background:radial-gradient(circle at 30% 35%,rgba(24,165,255,.18),transparent 27%),radial-gradient(circle at 70% 65%,rgba(133,90,255,.17),transparent 30%);animation:drift 12s ease-in-out infinite alternate;pointer-events:none}
+    .grid{position:fixed;inset:0;opacity:.13;background-image:linear-gradient(rgba(98,230,255,.22) 1px,transparent 1px),linear-gradient(90deg,rgba(98,230,255,.22) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,transparent,#000 30%,transparent)}
+    main{position:relative;width:min(92vw,430px);padding:1px;border-radius:28px;background:linear-gradient(135deg,rgba(98,230,255,.65),rgba(139,124,255,.1) 45%,rgba(139,124,255,.65));box-shadow:0 28px 90px rgba(0,0,0,.55)}
+    .card{position:relative;padding:38px;border-radius:27px;background:var(--panel);backdrop-filter:blur(22px);border:1px solid rgba(255,255,255,.04);overflow:hidden}
+    .card:after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;right:-90px;top:-90px;background:var(--cyan);filter:blur(80px);opacity:.1}
+    .status{display:flex;align-items:center;gap:8px;color:var(--muted);font:600 11px/1.2 ui-monospace,SFMono-Regular,monospace;letter-spacing:.16em;text-transform:uppercase}.dot{width:7px;height:7px;border-radius:50%;background:#57f59d;box-shadow:0 0 14px #57f59d}
+    .avatar{width:92px;height:92px;margin:32px 0 24px;border-radius:24px;object-fit:cover;border:1px solid rgba(255,255,255,.18);box-shadow:0 14px 36px rgba(0,0,0,.35)}
+    h1{margin:0;font-size:clamp(36px,9vw,52px);line-height:.96;letter-spacing:-.055em}h1 span{display:block;color:transparent;background:linear-gradient(90deg,var(--cyan),#b9aaff);background-clip:text;-webkit-background-clip:text}
+    .role{margin:18px 0 8px;color:var(--muted);font-size:15px}.domain{margin:0 0 30px;color:#c8d7e7;font:500 12px ui-monospace,SFMono-Regular,monospace}
+    .links{display:grid;gap:12px}.button{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-radius:15px;text-decoration:none;color:var(--text);background:rgba(255,255,255,.045);border:1px solid var(--line);transition:.22s ease}.button:hover,.button:focus-visible{transform:translateY(-2px);background:rgba(98,230,255,.09);border-color:rgba(98,230,255,.55);outline:none;box-shadow:0 8px 28px rgba(55,202,255,.1)}
+    .button strong{font-size:14px}.button small{color:var(--muted);font:500 11px ui-monospace,SFMono-Regular,monospace}.arrow{color:var(--cyan);font-size:20px}
+    footer{margin-top:30px;color:#60758b;font:500 10px ui-monospace,SFMono-Regular,monospace;letter-spacing:.12em;text-transform:uppercase}
+    @keyframes drift{to{transform:translate3d(4%,3%,0) scale(1.08)}}@media(prefers-reduced-motion:reduce){body:before{animation:none}.button{transition:none}}
+  </style>
+</head>
+<body>
+  <div class="grid" aria-hidden="true"></div>
+  <main>
+    <section class="card" aria-label="Ryan Key digital name card">
+      <div class="status"><span class="dot"></span> Available online</div>
+      <img class="avatar" src="https://avatars.githubusercontent.com/u/84314952?v=4" alt="Ryan Key" width="92" height="92">
+      <h1>Ryan <span>Key.</span></h1>
+      <p class="role">Designer · Builder · Digital Creator</p>
+      <p class="domain">ryankey.com.my</p>
+      <div class="links">
+        <a class="button" href="https://github.com/ryankeydesigns" target="_blank" rel="noopener noreferrer" aria-label="Open Ryan Key's GitHub profile">
+          <span><strong>GitHub</strong><br><small>@ryankeydesigns</small></span><span class="arrow">↗</span>
+        </a>
+      </div>
+      <footer>Digital name card · Malaysia</footer>
+    </section>
+  </main>
+</body>
+</html>
