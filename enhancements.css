@@ -1,6 +1,23 @@
 .portrait{overflow:hidden}
-.portrait img{display:block;animation:portraitIn 1.1s cubic-bezier(.2,.8,.2,1) both;object-position:center 22%;background:#9b7557}
+.portrait img{display:block;object-position:center 22%;background:#9b7557;will-change:transform;animation:portraitIn 1.15s cubic-bezier(.2,.8,.2,1) both}
 .brand{animation:shimmer 4s ease-in-out infinite}
+body:before{animation:ambientDrift 18s ease-in-out infinite alternate}
+.hero{position:relative;isolation:isolate;transform-style:preserve-3d;will-change:transform;transition:transform .18s ease-out,border-color .35s ease,box-shadow .35s ease}
+.hero:before{content:"";position:absolute;z-index:3;inset:0;pointer-events:none;background:radial-gradient(420px circle at var(--hero-x,72%) var(--hero-y,28%),rgba(255,238,194,.16),transparent 48%);opacity:.35;transition:opacity .3s}
+.hero:hover{border-color:rgba(232,184,106,.25);box-shadow:0 34px 115px rgba(0,0,0,.58),0 0 55px rgba(232,184,106,.06)}
+.hero:hover:before{opacity:1}
+.hero .intro,.hero .portrait{position:relative;z-index:1}
+.hero .portrait img{transform:scale(1.025) translate3d(var(--portrait-x,0),var(--portrait-y,0),0);transition:transform .3s cubic-bezier(.2,.8,.2,1),filter .35s ease}
+.hero:hover .portrait img{filter:saturate(.88) contrast(1.07)}
+.eyebrow,.intro h1,.title,.location,.hero-about{animation:heroTextIn .8s cubic-bezier(.2,.8,.2,1) both}
+.intro h1{animation-delay:.08s}.title{animation-delay:.16s}.location{animation-delay:.22s}.hero-about{animation-delay:.28s}
+.intro h1 span{background-size:220% 100%;animation:goldFlow 6s ease-in-out infinite}
+.actions .action{position:relative;overflow:hidden;animation:actionIn .65s cubic-bezier(.2,.8,.2,1) both}
+.actions .action:nth-child(1){animation-delay:.18s}.actions .action:nth-child(2){animation-delay:.25s}.actions .action:nth-child(3){animation-delay:.32s}.actions .action:nth-child(4){animation-delay:.39s}
+.action:after{content:"";position:absolute;inset:-80% -30%;background:linear-gradient(110deg,transparent 38%,rgba(255,255,255,.12) 50%,transparent 62%);transform:translateX(-70%) rotate(8deg);transition:transform .65s ease}
+.action:hover:after,.action:focus-visible:after{transform:translateX(70%) rotate(8deg)}
+.action b{animation:softPulse 3s ease-in-out infinite}
+.online:before{animation:onlinePulse 2.2s ease-in-out infinite}
 .experience{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .experience-card{--accent:#e8b86a;position:relative;min-height:245px;padding:24px;border-radius:20px;background:linear-gradient(145deg,#151d2a,rgba(21,29,42,.62));border:1px solid rgba(255,255,255,.09);overflow:hidden;transition:.35s cubic-bezier(.2,.8,.2,1)}
 .experience-card.cyan{--accent:#67d8e7}.experience-card.violet{--accent:#bd8cff}
@@ -10,11 +27,27 @@
 .experience-card .number{color:var(--accent);font:800 11px ui-monospace,monospace;letter-spacing:.14em}
 .experience-card h3{margin:38px 0 12px;font-size:20px;line-height:1.25}
 .experience-card p{margin:0;color:#9aa8b8;font-size:13px;line-height:1.7}
-.section.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.8,.2,1)}
+.section.reveal{opacity:0;transform:translateY(34px) scale(.992);transition:opacity .78s ease,transform .78s cubic-bezier(.2,.8,.2,1)}
 .section.reveal.visible{opacity:1;transform:none}
-.action b{animation:softPulse 3s ease-in-out infinite}
-@keyframes portraitIn{from{opacity:0;transform:scale(1.1)}to{opacity:1;transform:scale(1)}}
+.section.reveal .contact,.section.reveal .social,.section.reveal .review-card,.section.reveal .client-card,.section.reveal .experience-card{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.8,.2,1),border-color .25s,box-shadow .25s}
+.section.reveal.visible .contact,.section.reveal.visible .social,.section.reveal.visible .review-card,.section.reveal.visible .client-card,.section.reveal.visible .experience-card{opacity:1;transform:none}
+.section.reveal.visible :is(.contact,.social,.review-card,.client-card,.experience-card):nth-child(2){transition-delay:.06s}
+.section.reveal.visible :is(.contact,.social,.review-card,.client-card,.experience-card):nth-child(3){transition-delay:.12s}
+.section.reveal.visible :is(.contact,.social,.review-card,.client-card,.experience-card):nth-child(4){transition-delay:.18s}
+.social:hover .badge{transform:rotate(-6deg) scale(1.08);box-shadow:0 8px 20px rgba(232,184,106,.16)}
+.badge,.client-visual img{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease}
+.client-card:hover .client-visual img{transform:translateY(-4px) scale(1.06);box-shadow:0 18px 36px rgba(0,0,0,.34)}
+.review-card:hover .stars{animation:starGlow .8s ease}
+.review-arrow,.client-arrow{position:relative;overflow:hidden}
+.review-arrow:active,.client-arrow:active,.action:active,.social:active,.contact:active{transform:scale(.97)}
+@keyframes portraitIn{from{opacity:0;transform:scale(1.1)}to{opacity:1;transform:scale(1.025)}}
+@keyframes heroTextIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes actionIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 @keyframes shimmer{0%,100%{filter:drop-shadow(0 0 0 rgba(232,184,106,0))}50%{filter:drop-shadow(0 0 15px rgba(232,184,106,.28))}}
-@keyframes softPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
-@media(max-width:720px){.experience{grid-template-columns:1fr}.experience-card{min-height:210px}.experience-card h3{margin-top:28px}}
-@media(prefers-reduced-motion:reduce){.portrait img,.brand,.action b{animation:none}.section.reveal{opacity:1;transform:none}}
+@keyframes goldFlow{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
+@keyframes softPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+@keyframes onlinePulse{0%,100%{box-shadow:0 0 10px #60efa4;opacity:.8}50%{box-shadow:0 0 24px #60efa4;opacity:1}}
+@keyframes ambientDrift{from{background-position:0 0,0 0,0 0,0 0}to{background-position:34px 20px,-28px 26px,22px 22px,22px 22px}}
+@keyframes starGlow{50%{filter:drop-shadow(0 0 8px rgba(251,188,4,.55))}}
+@media(max-width:720px){.experience{grid-template-columns:1fr}.experience-card{min-height:210px}.experience-card h3{margin-top:28px}.hero{transform:none!important}.hero:before{opacity:.55}.hero .portrait img{transform:scale(1.025)}}
+@media(prefers-reduced-motion:reduce){body:before,.portrait img,.brand,.action b,.online:before,.eyebrow,.intro h1,.title,.location,.hero-about,.actions .action,.intro h1 span{animation:none!important}.hero,.hero .portrait img{transform:none!important;transition:none!important}.section.reveal,.section.reveal *{opacity:1!important;transform:none!important;transition:none!important}}
