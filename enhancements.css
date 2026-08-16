@@ -80,8 +80,8 @@ body.is-loading{overflow:hidden}
 .section-head h2:after{content:"";display:block;width:36px;height:2px;margin-top:10px;border-radius:2px;background:linear-gradient(90deg,#e8b86a,#67d8e7);transform:scaleX(.25);transform-origin:left;opacity:.45;transition:transform .6s cubic-bezier(.2,.8,.2,1),opacity .4s}
 .section.visible .section-head h2:after,.section:hover .section-head h2:after{transform:scaleX(1);opacity:1}
 .interactive-glow{--glow-x:50%;--glow-y:50%;position:relative;isolation:isolate}
-.interactive-glow:after{content:"";position:absolute;z-index:-1;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(220px circle at var(--glow-x) var(--glow-y),rgba(232,184,106,.13),rgba(103,216,231,.045) 40%,transparent 70%);opacity:0;transition:opacity .3s}
-.interactive-glow:hover:after,.interactive-glow:focus-visible:after{opacity:1}
+.interactive-glow:after{content:"";position:absolute;z-index:0;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(220px circle at var(--glow-x) var(--glow-y),rgba(232,184,106,.13),rgba(103,216,231,.045) 40%,transparent 70%);opacity:0;transition:opacity .3s}
+.interactive-glow>*{position:relative;z-index:1}.interactive-glow:hover:after,.interactive-glow:focus-visible:after{opacity:1}
 .interaction-ripple{position:absolute;z-index:5;width:12px;height:12px;border-radius:50%;pointer-events:none;background:rgba(255,255,255,.32);transform:translate(-50%,-50%) scale(0);animation:rippleOut .62s ease-out forwards}
 .action,.contact,.social,.review-arrow,.client-arrow{overflow:hidden}
 .action,.contact,.social,.review-arrow,.client-arrow,.back-to-top{touch-action:manipulation}
