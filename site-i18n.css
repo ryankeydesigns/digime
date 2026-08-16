@@ -1,0 +1,5 @@
+.language-switch{display:inline-flex;align-items:center;gap:3px;margin-left:auto;margin-right:16px;padding:4px;border:1px solid var(--line);border-radius:999px;background:rgba(17,23,34,.76)}
+.language-switch button{min-width:42px;border:0;border-radius:999px;background:transparent;color:var(--muted);padding:7px 10px;font-size:11px;font-weight:800;cursor:pointer;transition:.2s}
+.language-switch button[aria-pressed=true]{background:linear-gradient(135deg,rgba(232,184,106,.24),rgba(103,216,231,.12));color:var(--text);box-shadow:inset 0 0 0 1px rgba(232,184,106,.22)}
+.language-switch button:hover,.language-switch button:focus-visible{color:var(--gold);outline:none}
+@media(max-width:560px){.topbar{flex-wrap:wrap}.language-switch{order:3;width:100%;margin:12px 0 0;justify-content:flex-end;background:transparent;border:0;padding:0}.language-switch button{border:1px solid var(--line)}}
