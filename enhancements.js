@@ -1,3 +1,15 @@
+const siteLoader = document.getElementById('siteLoader');
+if (siteLoader) {
+  window.setTimeout(() => {
+    siteLoader.classList.add('is-exiting');
+    document.body.classList.remove('is-loading');
+    siteLoader.setAttribute('aria-hidden', 'true');
+    window.setTimeout(() => siteLoader.remove(), 850);
+  }, 5000);
+} else {
+  document.body.classList.remove('is-loading');
+}
+
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 const revealObserver = new IntersectionObserver((entries) => {
