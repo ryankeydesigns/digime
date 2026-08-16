@@ -34,6 +34,9 @@ body:before{animation:ambientDrift 18s ease-in-out infinite alternate}
 .section.reveal.visible :is(.contact,.social,.review-card,.client-card,.experience-card):nth-child(2){transition-delay:.06s}
 .section.reveal.visible :is(.contact,.social,.review-card,.client-card,.experience-card):nth-child(3){transition-delay:.12s}
 .section.reveal.visible :is(.contact,.social,.review-card,.client-card,.experience-card):nth-child(4){transition-delay:.18s}
+.section.reveal.visible .contact:hover,.section.reveal.visible .social:hover{transform:translateY(-2px)}
+.section.reveal.visible .review-card:hover,.section.reveal.visible .client-card:hover{transform:translateY(-4px)}
+.section.reveal.visible .experience-card:hover{transform:translateY(-7px)}
 .social:hover .badge{transform:rotate(-6deg) scale(1.08);box-shadow:0 8px 20px rgba(232,184,106,.16)}
 .badge,.client-visual img{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease}
 .client-card:hover .client-visual img{transform:translateY(-4px) scale(1.06);box-shadow:0 18px 36px rgba(0,0,0,.34)}
