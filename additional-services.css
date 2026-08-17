@@ -1,0 +1,28 @@
+.extra-services{margin-top:16px;overflow:hidden}
+.extra-services__intro{max-width:650px;color:#aebbc8;line-height:1.7}
+.extra-services__controls{display:flex;justify-content:flex-end;gap:8px;margin:-8px 0 14px}
+.extra-services__arrow{display:grid;place-items:center;width:40px;height:40px;border:1px solid var(--line);border-radius:50%;background:var(--panel2);color:var(--text);cursor:pointer;transition:.2s}
+.extra-services__arrow:hover,.extra-services__arrow:focus-visible{border-color:rgba(232,184,106,.55);color:var(--gold);transform:translateY(-2px);outline:none}
+.extra-services__arrow:disabled{opacity:.35;cursor:default;transform:none}
+.extra-services__slider{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 24px)/3);gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-inline:contain;scrollbar-width:none;padding:2px 1px 9px}
+.extra-services__slider::-webkit-scrollbar{display:none}
+.extra-service-card{--service-accent:var(--gold);position:relative;isolation:isolate;scroll-snap-align:start;scroll-snap-stop:always;display:flex;min-height:430px;flex-direction:column;overflow:hidden;border:1px solid var(--line);border-radius:21px;background:linear-gradient(150deg,#151d2a,rgba(21,29,42,.64));transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .3s}
+.extra-service-card:nth-child(2n){--service-accent:var(--cyan)}
+.extra-service-card:hover,.extra-service-card:focus-within{transform:translateY(-5px);border-color:color-mix(in srgb,var(--service-accent) 48%,transparent);box-shadow:0 22px 48px rgba(0,0,0,.24)}
+.extra-service-card__visual{position:relative;display:grid;place-items:center;height:142px;overflow:hidden;background:radial-gradient(circle at 50% 42%,color-mix(in srgb,var(--service-accent) 18%,transparent),transparent 57%),linear-gradient(135deg,rgba(232,184,106,.07),rgba(103,216,231,.06))}
+.extra-service-card__visual:before{content:"";position:absolute;width:120px;height:120px;border:1px solid color-mix(in srgb,var(--service-accent) 25%,transparent);border-radius:34px;transform:rotate(14deg);transition:.45s cubic-bezier(.2,.8,.2,1)}
+.extra-service-card:hover .extra-service-card__visual:before{transform:rotate(22deg) scale(1.08)}
+.extra-service-card__visual svg{position:relative;z-index:1;width:64px;height:64px;color:var(--service-accent);filter:drop-shadow(0 12px 22px rgba(0,0,0,.32));transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.extra-service-card:hover .extra-service-card__visual svg{transform:translateY(-4px) scale(1.07)}
+.extra-service-card__index{position:absolute;top:13px;right:14px;color:rgba(255,255,255,.37);font:700 10px ui-monospace,monospace;letter-spacing:.12em}
+.extra-service-card__body{display:flex;flex:1;flex-direction:column;padding:21px}
+.extra-service-card h3{margin:0 0 9px;font-size:18px;line-height:1.3;letter-spacing:-.025em}
+.extra-service-card__price{margin:0 0 14px;color:var(--service-accent);font-size:15px;font-weight:850}
+.extra-service-card__description{margin:0;color:#aebbc8;font-size:13px;line-height:1.65;flex:1}
+.extra-service-card__button{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:19px;padding:12px 14px;border:1px solid color-mix(in srgb,var(--service-accent) 42%,transparent);border-radius:13px;background:color-mix(in srgb,var(--service-accent) 11%,transparent);color:var(--text);font-size:12px;font-weight:780;text-decoration:none;transition:.25s}
+.extra-service-card__button:hover,.extra-service-card__button:focus-visible{border-color:var(--service-accent);background:color-mix(in srgb,var(--service-accent) 18%,transparent);transform:translateY(-2px);outline:none}
+.extra-service-card__button b{color:var(--service-accent);font-size:16px}
+@supports not (color:color-mix(in srgb,white,black)){.extra-service-card:hover{border-color:rgba(232,184,106,.45)}.extra-service-card__button{border-color:rgba(232,184,106,.42);background:rgba(232,184,106,.1)}}
+@media(max-width:900px) and (min-width:721px){.extra-services__slider{grid-auto-columns:calc((100% - 12px)/2)}}
+@media(max-width:720px){.extra-services__controls{margin-top:0}.extra-services__slider{grid-auto-columns:88%}.extra-service-card{min-height:405px}}
+@media(prefers-reduced-motion:reduce){.extra-services__slider{scroll-behavior:auto}.extra-service-card,.extra-service-card__visual:before,.extra-service-card__visual svg,.extra-service-card__button{transition:none}}
