@@ -5,7 +5,7 @@ if (siteLoader) {
     document.body.classList.remove('is-loading');
     siteLoader.setAttribute('aria-hidden', 'true');
     window.setTimeout(() => siteLoader.remove(), 850);
-  }, 5000);
+  }, 3000);
 } else {
   document.body.classList.remove('is-loading');
 }
