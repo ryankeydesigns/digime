@@ -102,7 +102,7 @@ backToTop.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
 });
 
-const glowTargets = document.querySelectorAll('.contact,.social,.review-card,.client-card,.experience-card');
+const glowTargets = document.querySelectorAll('.contact,.social,.review-card,.client-card,.experience-card,.extra-service-card');
 glowTargets.forEach((target) => {
   target.classList.add('interactive-glow');
   if (!reduceMotion && window.matchMedia('(pointer: fine)').matches) {
@@ -114,7 +114,7 @@ glowTargets.forEach((target) => {
   }
 });
 
-document.querySelectorAll('.action,.contact,.social,.review-arrow,.client-arrow,.back-to-top').forEach((element) => {
+document.querySelectorAll('.action,.contact,.social,.review-arrow,.client-arrow,.extra-services__arrow,.extra-service-card__button,.back-to-top').forEach((element) => {
   element.addEventListener('pointerdown', (event) => {
     if (reduceMotion) return;
     const rect = element.getBoundingClientRect();
@@ -128,7 +128,7 @@ document.querySelectorAll('.action,.contact,.social,.review-arrow,.client-arrow,
 });
 
 if (!reduceMotion && window.matchMedia('(pointer: fine)').matches) {
-  document.querySelectorAll('.action,.review-arrow,.client-arrow').forEach((element) => {
+  document.querySelectorAll('.action,.review-arrow,.client-arrow,.extra-services__arrow').forEach((element) => {
     element.addEventListener('pointermove', (event) => {
       const rect = element.getBoundingClientRect();
       const x = ((event.clientX - rect.left) / rect.width - 0.5) * 5;
@@ -141,7 +141,7 @@ if (!reduceMotion && window.matchMedia('(pointer: fine)').matches) {
   });
 }
 
-document.querySelectorAll('.reviews,.clients-slider').forEach((slider) => {
+document.querySelectorAll('.reviews,.clients-slider,.extra-services__slider').forEach((slider) => {
   let sliderTimer;
   slider.addEventListener('scroll', () => {
     slider.classList.add('slider-active');
