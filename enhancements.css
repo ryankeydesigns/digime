@@ -29,13 +29,13 @@ body:before{animation:ambientDrift 18s ease-in-out infinite alternate}
 .experience-card p{margin:0;color:#9aa8b8;font-size:13px;line-height:1.7}
 .section.reveal{opacity:0;transform:translateY(34px) scale(.992);transition:opacity .78s ease,transform .78s cubic-bezier(.2,.8,.2,1)}
 .section.reveal.visible{opacity:1;transform:none}
-.section.reveal .contact,.section.reveal .social,.section.reveal .review-card,.section.reveal .client-card,.section.reveal .experience-card{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.8,.2,1),border-color .25s,box-shadow .25s}
-.section.reveal.visible .contact,.section.reveal.visible .social,.section.reveal.visible .review-card,.section.reveal.visible .client-card,.section.reveal.visible .experience-card{opacity:1;transform:none}
-.section.reveal.visible :is(.contact,.social,.review-card,.client-card,.experience-card):nth-child(2){transition-delay:.06s}
-.section.reveal.visible :is(.contact,.social,.review-card,.client-card,.experience-card):nth-child(3){transition-delay:.12s}
-.section.reveal.visible :is(.contact,.social,.review-card,.client-card,.experience-card):nth-child(4){transition-delay:.18s}
+.section.reveal .contact,.section.reveal .social,.section.reveal .review-card,.section.reveal .client-card,.section.reveal .experience-card,.section.reveal .extra-service-card{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.8,.2,1),border-color .25s,box-shadow .25s}
+.section.reveal.visible .contact,.section.reveal.visible .social,.section.reveal.visible .review-card,.section.reveal.visible .client-card,.section.reveal.visible .experience-card,.section.reveal.visible .extra-service-card{opacity:1;transform:none}
+.section.reveal.visible :is(.contact,.social,.review-card,.client-card,.experience-card,.extra-service-card):nth-child(2){transition-delay:.06s}
+.section.reveal.visible :is(.contact,.social,.review-card,.client-card,.experience-card,.extra-service-card):nth-child(3){transition-delay:.12s}
+.section.reveal.visible :is(.contact,.social,.review-card,.client-card,.experience-card,.extra-service-card):nth-child(4){transition-delay:.18s}
 .section.reveal.visible .contact:hover,.section.reveal.visible .social:hover{transform:translateY(-2px)}
-.section.reveal.visible .review-card:hover,.section.reveal.visible .client-card:hover{transform:translateY(-4px)}
+.section.reveal.visible .review-card:hover,.section.reveal.visible .client-card:hover{transform:translateY(-4px)}.section.reveal.visible .extra-service-card:hover{transform:translateY(-5px)}
 .section.reveal.visible .experience-card:hover{transform:translateY(-7px)}
 .social:hover .badge{transform:rotate(-6deg) scale(1.08);box-shadow:0 8px 20px rgba(232,184,106,.16)}
 .badge,.client-visual img{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease}
@@ -85,8 +85,8 @@ body.is-loading{overflow:hidden}
 .interaction-ripple{position:absolute;z-index:5;width:12px;height:12px;border-radius:50%;pointer-events:none;background:rgba(255,255,255,.32);transform:translate(-50%,-50%) scale(0);animation:rippleOut .62s ease-out forwards}
 .action,.contact,.social,.review-arrow,.client-arrow{overflow:hidden}
 .action,.contact,.social,.review-arrow,.client-arrow,.back-to-top{touch-action:manipulation}
-.slider-active .review-card,.slider-active .client-card{transition:transform .28s cubic-bezier(.2,.8,.2,1),opacity .28s}
-.slider-active .review-card:not(:hover),.slider-active .client-card:not(:hover){opacity:.88}
+.slider-active .review-card,.slider-active .client-card,.slider-active .extra-service-card{transition:transform .28s cubic-bezier(.2,.8,.2,1),opacity .28s}
+.slider-active .review-card:not(:hover),.slider-active .client-card:not(:hover),.slider-active .extra-service-card:not(:hover){opacity:.88}
 @keyframes rippleOut{0%{transform:translate(-50%,-50%) scale(0);opacity:.7}100%{transform:translate(-50%,-50%) scale(14);opacity:0}}
 @media(max-width:720px){.interaction-progress{height:2px}.back-to-top{width:42px;height:42px}.interactive-glow:after{display:none}}
 @media(prefers-reduced-motion:reduce){.interaction-progress{transition:none}.back-to-top,.section-head h2:after{transition:none}.interaction-ripple{display:none}}
