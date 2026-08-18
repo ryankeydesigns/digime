@@ -105,3 +105,7 @@ body.is-loading{overflow:hidden}
 
 /* 20% larger typography for the hero roles card */
 .hero-roles__title,.hero-roles__list li{font-size:13.2px}
+
+/* 40% larger hero biography typography */
+.hero-about{font-size:18.2px}
+.hero-specialties{font-size:15.4px;line-height:1.5}
