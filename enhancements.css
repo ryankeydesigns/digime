@@ -102,3 +102,6 @@ body.is-loading{overflow:hidden}
 .hero-roles__list strong{color:#eef2f5;font-weight:720}
 .hero-roles:hover{border-color:rgba(232,184,106,.32);transform:translateY(-2px);transition:border-color .25s ease,transform .25s ease}
 @media(max-width:720px){.hero{min-height:auto}.hero-roles{padding:13px 14px}.hero-roles__list li{font-size:11px}}
+
+/* 20% larger typography for the hero roles card */
+.hero-roles__title,.hero-roles__list li{font-size:13.2px}
