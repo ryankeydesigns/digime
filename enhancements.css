@@ -112,3 +112,8 @@ body.is-loading{overflow:hidden}
 
 /* 50% larger header brand logo */
 .topbar .brand{font-size:24px;line-height:1}
+
+/* Clickable WhatsApp availability indicator */
+.topbar .online{text-decoration:none;cursor:pointer;padding:8px 10px;border:1px solid transparent;border-radius:999px;transition:color .2s ease,border-color .2s ease,background .2s ease,transform .2s ease}
+.topbar .online:hover,.topbar .online:focus-visible{color:#dfffee;border-color:rgba(96,239,164,.28);background:rgba(96,239,164,.08);transform:translateY(-1px);outline:none}
+.topbar .online:focus-visible{box-shadow:0 0 0 3px rgba(96,239,164,.14)}
