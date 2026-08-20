@@ -7,6 +7,7 @@ export const RYAN_KNOWLEDGE = {
     role: "Chief Web Design & Branding Advisor",
     location: "Kuala Lumpur, Malaysia",
     experience: "More than 20 years of web design and brand strategy experience.",
+    education: "Graduated from The One Academy in 1997.",
     positioning: [
       "Full-time freelance web designer",
       "Web Design and Digital Marketing Trainer",
