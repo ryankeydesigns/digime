@@ -34,7 +34,7 @@ export const RYAN_KNOWLEDGE = {
   packages: [
     {
       name: "AI Website Package",
-      price: "Original RM4,800; special RM2,800",
+      price: "Original RM4,800; special RM3,800",
       suitableFor: "Businesses, research organizations and innovative projects seeking an interactive, bilingual and AI-ready brand experience.",
       includes: [
         "AI-ready website strategy and original custom design",
@@ -52,19 +52,19 @@ export const RYAN_KNOWLEDGE = {
     },
     {
       name: "Corporate Website Package",
-      price: "RM5,000 / USD1,250",
+      price: "RM4,800",
       suitableFor: "Companies that need a professional online presence and complete presentation of their company, services, products and information.",
       summary: "Generally 6 to 8 independent pages with responsive design, company branding, news or blog, inquiry form, WhatsApp, Maps, Analytics and supporting setup."
     },
     {
       name: "E-commerce Website Package",
-      price: "RM6,500 / USD1,625",
+      price: "RM5,500",
       suitableFor: "Businesses preparing for online sales and requiring product, order and payment management.",
       summary: "Includes product categories, cart, checkout, online payment integration, customer accounts, order management, invoices and responsive design."
     },
     {
       name: "Single-page Website Package",
-      price: "RM3,200 / USD800",
+      price: "RM2,400",
       suitableFor: "Small businesses, personal brands, startups and campaign promotion.",
       summary: "One scrolling page with key content sections, responsive custom design, WhatsApp, form, Maps, gallery, social buttons and basic analytics setup."
     }
