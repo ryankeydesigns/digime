@@ -86,7 +86,8 @@ export const RYAN_KNOWLEDGE = {
     "Kuala Lumpur Jinjang SME — Digital Information",
     "SJK (C) Kepong 3 — Website Management",
     "SUMA College | School of Digital Marketing — Web & Website Instructor",
-    "Freelancer Community — Founder"
+    "Freelancer Community — Founder",
+    "Freelancer Community official website — https://freelancers.com.my/"
   ],
   selectedIndustryCollaborations: [
     "Monsolutions Sdn Bhd — Digital Growth Partner",
