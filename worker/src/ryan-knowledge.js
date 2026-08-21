@@ -391,7 +391,123 @@ export const RYAN_KNOWLEDGE = {
     "Never disclose passwords, API keys, login credentials, server credentials, private customer information or internal data.",
     "For Freelancer Community membership questions, distinguish core members from members and use only the names and profile URLs recorded in freelancerCommunity."
   ],
+  "aiWebsiteCourse2026": {
+    "officialWebsite": "https://ai-website26.ryankeycourse.com/",
+    "courseName": "2026 Freelancer Course | WordPress + AI Website Development",
+    "provider": "RyanKey Designs",
+    "mentor": "Ryan Key",
+    "positioning": "A practical dual-core course covering WordPress Development, AI Website Development and Freelancer business skills.",
+    "coreMessage": "WordPress is today's practical commercial website foundation; AI Website Development expands future development possibilities. The course teaches learners to choose the most suitable approach for each project rather than replacing one with the other.",
+    "learningOutcomes": [
+      "Build professional commercial websites with WordPress",
+      "Use AI to accelerate website planning, design, coding, content and development workflows",
+      "Complete responsive websites for desktop, tablet and mobile",
+      "Develop a real AI website project that can be presented, launched and delivered",
+      "Understand client communication, proposals, pricing, payment, project management, handover and maintenance"
+    ],
+    "wordpressModules": [
+      "WordPress setup and configuration",
+      "Domain, hosting, DNS and website launch",
+      "Elementor commercial website layouts",
+      "Responsive desktop, tablet and mobile design",
+      "UI/UX: typography, colour, spacing and user experience",
+      "Plugin selection and management",
+      "Image, cache and loading-speed performance",
+      "Backup, updates and security maintenance",
+      "Completion of a real business website"
+    ],
+    "aiWebsiteModules": [
+      "AI website planning: sitemap, sections and content",
+      "Prompt engineering for effective development instructions",
+      "AI UI development",
+      "AI-assisted HTML, CSS and JavaScript",
+      "Interactive scrolling, hover effects, cards and micro-animations",
+      "Responsive AI websites",
+      "AI debugging: identify, describe, modify and test",
+      "Website deployment",
+      "A real AI website project"
+    ],
+    "freelancerBusinessModules": [
+      "Finding clients",
+      "Client communication and business-needs discovery",
+      "Website proposal preparation",
+      "Website pricing",
+      "Deposit, progress and balance payment arrangements",
+      "Content, revision and launch project management",
+      "Website handover and client training",
+      "Long-term website maintenance services"
+    ],
+    "suitableFor": [
+      "Beginners with no programming background",
+      "WordPress learners and existing WordPress users",
+      "Graphic designers and web designers",
+      "Digital marketers and content creators",
+      "Freelancers",
+      "College students",
+      "Career switchers",
+      "People who want to improve efficiency with AI"
+    ],
+    "schedule": {
+      "startDate": "Mid October 2026",
+      "classTime": "10:00 AM to 1:00 PM, morning session",
+      "duration": "4 months",
+      "venue": "SUMA College, Kota Damansara, Selangor",
+      "map": "https://maps.app.goo.gl/9g9GZ1B2aiwXKJWYA"
+    },
+    "fees": {
+      "standardPayment": "RM3,800 total; registration fee RM380 and RM3,420 before the course starts",
+      "instalmentPayment": "RM380 plus RM900 x 4; RM3,980 total",
+      "ryanKeyFansSpecial": "RM3,040 one-time full payment; original RM3,800, save RM760 / 20% off",
+      "note": "Course fees and promotions must be confirmed on the official course website or directly with Ryan before registration."
+    },
+    "mentorProfile": {
+      "name": "Ryan Key",
+      "role": "Chief Web Design & Branding Advisor",
+      "experience": "More than 20 years of web design and brand strategy experience",
+      "focus": [
+        "Web design",
+        "Digital marketing training",
+        "AI personal branding consulting",
+        "Enterprise digital solutions",
+        "Practical education",
+        "Business collaboration and resource connections"
+      ],
+      "teachingMessage": "The course is designed not only to teach website production, but also to help learners turn website skills into commercial value."
+    },
+    "courseFaq": [
+      {
+        "question": "Can a complete beginner join?",
+        "answer": "Yes. The course starts with WordPress foundations and gradually moves into AI Website Development."
+      },
+      {
+        "question": "Does the course teach WordPress or AI?",
+        "answer": "Both. It uses a dual-core WordPress plus AI Website Development approach."
+      },
+      {
+        "question": "Is coding experience required?",
+        "answer": "No programming background is required. Learners use AI to understand, generate, modify and test code."
+      },
+      {
+        "question": "Why learn WordPress?",
+        "answer": "WordPress remains suitable for SME, corporate and content-driven websites and is an important practical freelancing tool."
+      },
+      {
+        "question": "Will AI replace WordPress?",
+        "answer": "Different projects need different solutions. The key skill is knowing which technology is more suitable."
+      },
+      {
+        "question": "Can graduates become freelancers?",
+        "answer": "The course covers development, pricing, communication and delivery, but results still depend on portfolio quality, execution and the market."
+      }
+    ],
+    "contactNote": "Registration enquiries should use the official website form or contact Ryan through the verified WhatsApp details in this knowledge base."
+  },
   "sources": [
+    {
+      "title": "2026 Freelancer Course | WordPress + AI Website Development",
+      "url": "https://ai-website26.ryankeycourse.com/",
+      "scope": "Official course positioning, modules, schedule, venue, fees, mentor profile and FAQ"
+    },
     {
       "title": "RyanKey AI Knowledge Base PDF",
       "version": "2026-08-21",
