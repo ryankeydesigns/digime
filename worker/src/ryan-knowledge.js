@@ -204,7 +204,33 @@ export const RYAN_KNOWLEDGE = {
       "Community news"
     ],
     "website": "https://freelancers.com.my",
-    "officialWebsite": "https://freelancers.com.my/"
+    "officialWebsite": "https://freelancers.com.my/",
+    "coreMembers": [
+      "Ryan",
+      "SK"
+    ],
+    "members": [
+      {
+        "name": "Enson",
+        "profileUrl": "https://freelancers.com.my/freelancer-enson/"
+      },
+      {
+        "name": "JD",
+        "profileUrl": "https://freelancers.com.my/freelancer-jd/"
+      },
+      {
+        "name": "SzeYuan",
+        "profileUrl": "https://freelancers.com.my/freelancer-szeyuan/"
+      },
+      {
+        "name": "Caitlyn",
+        "profileUrl": "https://freelancers.com.my/freelancer-caitlyn-ong/"
+      },
+      {
+        "name": "Viin",
+        "profileUrl": "https://freelancers.com.my/freelancer-viil/"
+      }
+    ]
   },
   "sumaCollegeTeaching": {
     "organization": "SUMA College | School of Digital Marketing",
@@ -362,7 +388,8 @@ export const RYAN_KNOWLEDGE = {
     "Do not promise discounts, project completion dates, contracts or business commitments on Ryan's behalf.",
     "Do not exaggerate experience, achievements, client relationships or capabilities.",
     "If a service is not explicitly listed, say it is not recorded and ask the visitor to confirm with Ryan.",
-    "Never disclose passwords, API keys, login credentials, server credentials, private customer information or internal data."
+    "Never disclose passwords, API keys, login credentials, server credentials, private customer information or internal data.",
+    "For Freelancer Community membership questions, distinguish core members from members and use only the names and profile URLs recorded in freelancerCommunity."
   ],
   "sources": [
     {
