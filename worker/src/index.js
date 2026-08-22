@@ -36,4 +36,23 @@ ${KNOWLEDGE_CONTEXT}`;
 function headers(origin){return{"content-type":"application/json; charset=utf-8","cache-control":"no-store, max-age=0","x-content-type-options":"nosniff","access-control-allow-origin":origin,"access-control-allow-methods":"POST, OPTIONS","access-control-allow-headers":"content-type","vary":"Origin"}}
 function json(origin,data,status=200){return new Response(JSON.stringify(data),{status,headers:headers(origin)})}
 function cleanText(value,max){return typeof value==="string"?value.trim().replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g,"").slice(0,max):""}
+const GENERAL_PROFANITY=[/\\b(?:fuck|shit|damn|cibai|puki)\\b/i,/(?:屌|操|妈的|他妈的|干你)/];
+const TARGETED_ABUSE=[/\\b(?:fuck\\s*you|idiot|stupid|asshole|bastard|motherfucker|bodoh|bangang)\\b/i,/(?:屌你|操你|傻逼|白痴|混蛋|废物|垃圾助手|垃圾AI)/i];
+const DANGEROUS_ABUSE=[/\\b(?:i(?:'ll|\\s+will)?\\s+(?:kill|hurt|attack)\\s+you|kill\\s+yourself|bomb\\s+(?:you|them|the))\\b/i,/(?:杀了你|杀死你|弄死你|炸死你|去死吧|我要伤害你)/i];
+function moderationReply(language,level,strikes){
+  const en=language==="en";
+  if(level==="danger")return en?"I can’t help with threats, violence or hateful attacks. This conversation has been paused for 10 minutes. If anyone may be in immediate danger, please contact local emergency services.":"我不能协助威胁、暴力或仇恨攻击。对话将暂停 10 分钟；如果有人可能正处于危险中，请立即联系当地紧急服务。";
+  if(strikes>=3)return en?"Let’s pause here for 10 minutes. I’m happy to help when the conversation stays respectful.":"我们先暂停 10 分钟。保持基本礼貌后，我仍然很乐意继续帮您。";
+  if(level==="targeted")return en?"I’m here to help, but I can’t continue with personal insults. Please rephrase your question respectfully.":"我愿意帮忙，但无法继续回应针对个人的辱骂。请换一个比较尊重的说法再问。";
+  return en?"I understand you may be frustrated. Let’s keep it respectful—tell me what went wrong and I’ll try to help.":"我明白您可能有点不满。我们保持基本礼貌，您直接告诉我哪里出问题，我会尽量帮忙。";
+}
+function moderateMessage(message,language,previousStrikes){
+  const strikes=Math.max(0,Math.min(3,Number(previousStrikes)||0));
+  if(DANGEROUS_ABUSE.some(pattern=>pattern.test(message)))return{reply:moderationReply(language,"danger",3),moderation:{level:"danger",strikes:3,lockSeconds:600}};
+  const targeted=TARGETED_ABUSE.some(pattern=>pattern.test(message));
+  const general=targeted||GENERAL_PROFANITY.some(pattern=>pattern.test(message));
+  if(!general)return null;
+  const next=Math.min(3,strikes+(targeted?2:1));
+  return{reply:moderationReply(language,targeted?"targeted":"general",next),moderation:{level:next>=3?"locked":targeted?"targeted":"general",strikes:next,lockSeconds:next>=3?600:0}};
+}
 export default{async fetch(request,env){const url=new URL(request.url);if(url.pathname==="/health"&&request.method==="GET")return new Response("ok",{headers:{"cache-control":"no-store"}});const origin=request.headers.get("Origin")||"";if(!ALLOWED_ORIGINS.has(origin))return json("null",{error:"Origin not allowed"},403);if(request.method==="OPTIONS")return new Response(null,{status:204,headers:headers(origin)});if(url.pathname!=="/chat"||request.method!=="POST")return json(origin,{error:"Not found"},404);const length=Number(request.headers.get("content-length")||0);if(length>16384)return json(origin,{error:"Request too large"},413);const ip=request.headers.get("CF-Connecting-IP")||"anonymous";if(env.RATE_LIMITER){const allowed=await env.RATE_LIMITER.limit({key:ip});if(!allowed.success)return json(origin,{error:"Too many requests"},429)}let body;try{body=await request.json()}catch{return json(origin,{error:"Invalid JSON"},400)}const message=cleanText(body?.message,800);const language=body?.language==="en"?"en":"zh";const languageInstruction=language==="en"?"MANDATORY OUTPUT LANGUAGE: Reply entirely in natural English. Do not answer in Chinese, even if the knowledge contains Chinese text. Translate Chinese facts into English while preserving names and official titles when necessary.":"强制输出语言：必须全程使用自然、口语化的简体中文回复。除品牌名、网址及没有合适中文译名的专有名称外，不要使用整段英文。";if(message.length<2)return json(origin,{error:language==="en"?"Please enter a question.":"请输入您的问题。"},400);const moderation=moderateMessage(message,language,body?.moderationStrikes);if(moderation)return json(origin,moderation);const history=Array.isArray(body?.history)?body.history.slice(-6).flatMap(item=>{const role=item?.role==="assistant"?"assistant":item?.role==="user"?"user":null;const content=cleanText(item?.content,1000);return role&&content?[{role,content}]:[]}):[];const result=await env.AI.run(MODEL,{messages:[{role:"system",content:SYSTEM_PROMPT+"\n\n"+languageInstruction},...history,{role:"user",content:message}],max_tokens:420,temperature:.25});const reply=cleanText(result?.response,4000);if(!reply)return json(origin,{error:"AI response unavailable"},502);return json(origin,{reply})}}
