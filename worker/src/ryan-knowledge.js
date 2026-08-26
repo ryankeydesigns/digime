@@ -1,6 +1,6 @@
 export const RYAN_KNOWLEDGE = {
-  "version": "2026-08-21",
-  "lastVerified": "2026-08-21",
+  "version": "2026-08-26",
+  "lastVerified": "2026-08-26",
   "identity": {
     "name": "Ryan Key",
     "brand": "RyanKey Designs",
@@ -745,6 +745,152 @@ export const RYAN_KNOWLEDGE = {
     "Digital assets",
     "Business networks"
   ],
+  "serviceValueAndClientProtection": {
+    "source": "RyanKey AI Assistant Knowledge Base 260823.pdf",
+    "positioning": {
+      "title": "Digital Consultant × Web Specialist × Brand Advisor × AI Website Developer",
+      "experienceContext": "Ryan combines around 30 years of broader branding, advertising and website experience with more than 20 years of web design and brand strategy practice.",
+      "capabilities": [
+        "Website design and development",
+        "WordPress and AI website development",
+        "Branding, digital strategy and UI/UX",
+        "Google Business and SEO",
+        "Hosting, DNS and business email",
+        "Digital marketing and AI applications",
+        "Technical consultation",
+        "Digital asset protection",
+        "Long-term technical support"
+      ]
+    },
+    "pricingAndValue": {
+      "coreExplanation": "Ryan's fees are based on experience, judgment, strategy, technical knowledge, responsibility and long-term support—not only page count or production time.",
+      "customerBenefits": [
+        "Reduce avoidable mistakes and unnecessary development",
+        "Select suitable technology and a simpler approach where possible",
+        "Plan around business value, trust, user experience, enquiries and conversion",
+        "Prepare the website for SEO, Google Business, AI Search and future expansion",
+        "Improve maintainability, scalability and long-term stability"
+      ],
+      "consultationPrinciple": "If a feature is unnecessary, offers little business value, has a simpler alternative, should be postponed to a later phase or is not worth the current budget, Ryan should say so rather than inflate the quotation.",
+      "conciseChineseAnswer": "RyanKey Designs 的收费不只计算网页数量或制作时间，也包括经验、判断、策略、技术责任与后续支持。重点是帮助客户减少错误、选择合适方案，并把网站建立成可长期使用的数码商业资产。",
+      "conciseEnglishAnswer": "RyanKey Designs does not price a project by page count or production hours alone. The fee also reflects experience, judgment, strategy, technical responsibility and ongoing support, with the goal of building a reliable digital business asset."
+    },
+    "businessFirstApproach": {
+      "principle": "A website is a Digital Business Asset, not only an Online Brochure.",
+      "considerations": [
+        "Brand positioning and customer trust",
+        "User experience, conversion and enquiries",
+        "SEO, Google Business and AI Search",
+        "Social media and digital marketing integration",
+        "Maintainability and future expansion"
+      ]
+    },
+    "longTermSupport": [
+      "Website downtime and troubleshooting",
+      "Hosting and domain renewal",
+      "DNS and SSL",
+      "WordPress plugin conflicts",
+      "Business email",
+      "Google Business",
+      "Migration, backup, restoration and maintenance"
+    ],
+    "customerDigitalAssetProtection": {
+      "principle": "The client's company should own or control its important digital assets.",
+      "assets": [
+        "Domain name",
+        "Website files and database",
+        "Website content and images",
+        "Hosting information",
+        "Business email",
+        "Google Business Profile",
+        "Google Analytics",
+        "Google Search Console",
+        "DNS",
+        "Relevant administrator and third-party accounts"
+      ],
+      "domainGuidance": "The customer should know the registrar, registered owner, login, renewal status and DNS settings. A company domain should not be permanently locked inside a freelancer's or agency's private account.",
+      "websiteGuidance": "The customer should know where the website files, database and hosting are located, have appropriate administrator access, and understand the backup arrangement.",
+      "emailGuidance": "Changing a designer, agency or hosting provider should not cause the customer to lose control of the company's business email."
+    },
+    "vendorLockInPolicy": {
+      "statement": "Ryan can manage a client's digital assets, but should not use technology or account control to lock the client in.",
+      "retentionPrinciple": "Clients should stay because of trust, service and reliability—not because their domain, passwords, hosting, website or email are being withheld.",
+      "coreMessage": "The client can leave at any time, but chooses to stay because of trust."
+    },
+    "migrationAndHandover": {
+      "principle": "Changing provider is the client's right. Handover should be professional, clear and safe.",
+      "supportedItems": [
+        "Domain and DNS",
+        "Hosting",
+        "Website files and database",
+        "Backups",
+        "Business email",
+        "Google Business Profile",
+        "Google Analytics",
+        "Google Search Console",
+        "Administrator accounts",
+        "Relevant third-party services"
+      ]
+    },
+    "feeTransparency": {
+      "principle": "Clearly separate and explain each applicable fee.",
+      "feeTypes": [
+        "Domain",
+        "Hosting",
+        "Maintenance",
+        "Business email",
+        "Plugin or software licences",
+        "Third-party services",
+        "Professional service fees"
+      ],
+      "aiRule": "The AI Assistant must not invent prices, merge unrelated fees or replace the latest confirmed package prices. If a fee is not in the verified knowledge base, ask the visitor to confirm with Ryan."
+    },
+    "assistantResponseRules": {
+      "tone": "Professional, transparent, confident, friendly and conversational.",
+      "competitorRule": "Do not attack competitors, claim all agencies are dishonest or unprofessional, or say Ryan is always better. Explain Ryan's own value instead.",
+      "routing": {
+        "simpleQuestion": "Give a short, direct answer.",
+        "priceComparison": "Explain experience and business value.",
+        "ownershipConcern": "Explain digital asset ownership and customer control.",
+        "changingAgency": "Explain migration and professional handover.",
+        "whyChooseRyan": "Explain experience, strategy, customer protection and long-term support."
+      }
+    },
+    "intentKeywords": [
+      "Ryan price",
+      "Ryan pricing",
+      "Ryan expensive",
+      "why expensive",
+      "为什么贵",
+      "网站收费",
+      "website cost",
+      "quotation",
+      "freelancer comparison",
+      "agency comparison",
+      "为什么选择 Ryan",
+      "why choose Ryan",
+      "domain ownership",
+      "域名拥有权",
+      "website ownership",
+      "网站产权",
+      "digital asset",
+      "数码资产",
+      "hosting ownership",
+      "business email",
+      "vendor lock-in",
+      "更换代理",
+      "更换 Agency",
+      "website migration",
+      "网站搬迁",
+      "website handover",
+      "网站交接",
+      "DNS",
+      "Google Business ownership",
+      "客户利益",
+      "保护客户",
+      "网站属于谁"
+    ]
+  },
   "pdfKnowledgeFaq": [
     {
       "question": "Who is RyanKey?",
