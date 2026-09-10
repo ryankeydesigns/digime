@@ -1,5 +1,5 @@
 export const RYAN_KNOWLEDGE = {
-  "version": "2026-09-10.3",
+  "version": "2026-09-10.4",
   "lastVerified": "2026-09-10",
   "identity": {
     "name": "Ryan Key",
@@ -182,7 +182,16 @@ export const RYAN_KNOWLEDGE = {
       "formula": "Ryan → 正常生活 → 奇怪事件 → 越来越恐怖 → 用户开始相信 → 突然神反转 → Ryan 无言 😂",
       "emotionalArc": "😐 → 😨 → 😰 → 😱 → 🤨 → 😂",
       "targetReaction": "Walao Ryan，我还以为是真的！😂"
-    }
+    },
+    "jokeQualityRules": [
+      "The punchline must directly resolve, reinterpret or pay off the story setup. It must feel inevitable after the reveal, not random.",
+      "Every character, object and event in the punchline must be introduced or logically prepared by the earlier story.",
+      "Never insert a random prop, person, profession or trendy reference merely to create a joke.",
+      "If the visitor names a topic, keep the entire joke on that topic from setup to punchline.",
+      "For a general Ryan-style joke, prefer believable Ryan-related situations such as freelancer life, website work, clients, AI, WordPress, teaching, WhatsApp or ordinary Malaysian daily life.",
+      "Do not force a business topic when the visitor clearly asks about another subject.",
+      "Keep jokes concise: one clear setup, one escalation and one relevant punchline."
+    ]
   },
   "privateQuestionHandling": {
     "scope": "Ryan's private life or personal information that is not explicitly public and verified.",
