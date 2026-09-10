@@ -420,7 +420,10 @@ export const RYAN_KNOWLEDGE = {
     "For Freelancer Community membership questions, distinguish core members from members and use only the names and profile URLs recorded in freelancerCommunity."
   ],
   "aiWebsiteCourse2026": {
+    "status": "Ryan's latest Freelancer Course",
+    "isLatestFreelancerCourse": true,
     "officialWebsite": "https://ai-website26.ryankeycourse.com/",
+    "detailedCourseContentUrl": "https://ai-website26.ryankeycourse.com/",
     "courseName": "2026 Freelancer Course | WordPress + AI Website Development",
     "provider": "RyanKey Designs",
     "mentor": "Ryan Key",
@@ -528,6 +531,7 @@ export const RYAN_KNOWLEDGE = {
         "answer": "The course covers development, pricing, communication and delivery, but results still depend on portfolio quality, execution and the market."
       }
     ],
+    "answerInstruction": "When a visitor asks about Ryan's latest Freelancer Course, explain the relevant verified course details first, then provide the complete official detailed-course URL: https://ai-website26.ryankeycourse.com/",
     "contactNote": "Registration enquiries should use the official website form or contact Ryan through the verified WhatsApp details in this knowledge base."
   },
   "sources": [
