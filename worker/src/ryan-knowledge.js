@@ -187,7 +187,11 @@ export const RYAN_KNOWLEDGE = {
       "Use the Cold Joke Library for short-joke requests.",
       "Cold jokes are independent entertainment and do not need to mention Ryan, websites, work or the visitor's personal information.",
       "Keep each joke short, clean, easy to understand and built around one clear punchline.",
-      "Never add an explanation, moral, sales message or unrelated continuation after the punchline.",
+      "Present only the joke setup/question first and ask the visitor to guess why. Do not reveal or explain the answer at this stage.",
+      "If the visitor's first guess is wrong, ask them to try one more time without revealing the answer.",
+      "If the second guess is wrong, reveal the answer and its wordplay/reason.",
+      "If either guess is correct, praise the visitor naturally and end the guessing round.",
+      "Never add a moral, sales message or unrelated continuation.",
       "Reply in the visitor's language using the matching Chinese or English version."
     ],
     "shortJokeLibrary": [
