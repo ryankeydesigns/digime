@@ -1,5 +1,5 @@
 export const RYAN_KNOWLEDGE = {
-  "version": "2026-09-10.6",
+  "version": "2026-09-10.7",
   "lastVerified": "2026-09-10",
   "identity": {
     "name": "Ryan Key",
@@ -183,74 +183,88 @@ export const RYAN_KNOWLEDGE = {
       "emotionalArc": "😐 → 😨 → 😰 → 😱 → 🤨 → 😂",
       "targetReaction": "Walao Ryan，我还以为是真的！😂"
     },
-    "jokeQualityRules": [
-      "The punchline must directly resolve, reinterpret or pay off the story setup. It must feel inevitable after the reveal, not random.",
-      "Every character, object and event in the punchline must be introduced or logically prepared by the earlier story.",
-      "Never insert a random prop, person, profession or trendy reference merely to create a joke.",
-      "If the visitor names a topic, keep the entire joke on that topic from setup to punchline.",
-      "For a general Ryan-style joke, prefer believable Ryan-related situations such as freelancer life, website work, clients, AI, WordPress, teaching, WhatsApp or ordinary Malaysian daily life.",
-      "Do not force a business topic when the visitor clearly asks about another subject.",
-      "Keep jokes concise: one clear setup, one escalation and one relevant punchline."
-    ],
     "shortJokeRules": [
-      "A short joke must use one setup and one punchline only.",
-      "Keep it to no more than four short sentences or dialogue turns.",
-      "Never repeat speaker labels, ellipses or the same sentence pattern.",
-      "Stop immediately after the punchline."
+      "Use the Cold Joke Library for short-joke requests.",
+      "Cold jokes are independent entertainment and do not need to mention Ryan, websites, work or the visitor's personal information.",
+      "Keep each joke short, clean, easy to understand and built around one clear punchline.",
+      "Never add an explanation, moral, sales message or unrelated continuation after the punchline.",
+      "Reply in the visitor's language using the matching Chinese or English version."
     ],
     "shortJokeLibrary": [
       {
-        "topic": "网站设计",
-        "keywords": [
-          "网站",
-          "网页",
-          "website",
-          "web design",
-          "设计"
-        ],
-        "jokeZh": "客户问 Ryan：「Logo 可以再大一点吗？」Ryan 说：「可以，再大一点就要帮它申请独立网址了。」",
-        "jokeEn": "A client asked Ryan, “Can the logo be bigger?” Ryan replied, “Sure—any bigger and it’ll need its own website.”"
+        "id": "CJ01",
+        "jokeZh": "什么动物最容易滑倒？狐狸，因为它脚滑（狡猾）。",
+        "jokeEn": "Why did the bicycle fall over? Because it was two-tired."
       },
       {
-        "topic": "Freelancer",
-        "keywords": [
-          "freelancer",
-          "自由业",
-          "自由工作"
-        ],
-        "jokeZh": "朋友问 Ryan：「Freelancer 的工作时间是不是很自由？」Ryan 说：「很自由啊，客户可以自由选择凌晨几点找我。」",
-        "jokeEn": "A friend asked Ryan, “Are freelancer hours really flexible?” Ryan said, “Very—clients can freely choose which hour after midnight to message me.”"
+        "id": "CJ02",
+        "jokeZh": "什么水果最忙？芒果，因为它一直很「忙」。",
+        "jokeEn": "Why did the scarecrow win an award? Because he was outstanding in his field."
       },
       {
-        "topic": "AI",
-        "keywords": [
-          "ai",
-          "人工智能"
-        ],
-        "jokeZh": "客户问 Ryan：「用了 AI，你是不是可以更早收工？」Ryan 看着刚进来的三个新项目说：「AI 是快了，客户加工作也更快了。」",
-        "jokeEn": "A client asked Ryan, “Does AI let you finish work earlier?” Ryan looked at three new projects and said, “AI got faster—and so did clients adding work.”"
+        "id": "CJ03",
+        "jokeZh": "什么布永远剪不断？瀑布。",
+        "jokeEn": "What do you call a fake noodle? An impasta."
       },
       {
-        "topic": "WordPress",
-        "keywords": [
-          "wordpress",
-          "plugin",
-          "插件"
-        ],
-        "jokeZh": "WordPress 写着「一键更新」。Ryan 按下去后，用了一个晚上研究那一键到底更新了什么。",
-        "jokeEn": "WordPress said “one-click update.” Ryan clicked once, then spent the whole night finding out what that one click updated."
+        "id": "CJ04",
+        "jokeZh": "什么门永远关不上？球门。",
+        "jokeEn": "Why don’t eggs tell jokes? They might crack each other up."
       },
       {
-        "topic": "客户修改",
-        "keywords": [
-          "客户",
-          "修改",
-          "client",
-          "customer",
-          "revision"
-        ],
-        "jokeZh": "客户说：「这个真的是最后一次修改。」Ryan 看着文件名 FINAL_FINAL_V7，礼貌地点了点头。",
-        "jokeEn": "The client said, “This is definitely the final revision.” Ryan looked at the file named FINAL_FINAL_V7 and nodded politely."
+        "id": "CJ05",
+        "jokeZh": "冰箱为什么那么安静？因为它一直都很冷静。",
+        "jokeEn": "Why did the math book look sad? It had too many problems."
+      },
+      {
+        "id": "CJ06",
+        "jokeZh": "铅笔为什么想辞职？因为每天都被人削。",
+        "jokeEn": "Why was the computer cold? It left its Windows open."
+      },
+      {
+        "id": "CJ07",
+        "jokeZh": "时钟为什么总是很累？因为每天都被人催。",
+        "jokeEn": "What did the ocean say to the beach? Nothing—it just waved."
+      },
+      {
+        "id": "CJ08",
+        "jokeZh": "数学书为什么不开心？因为它的问题太多了。",
+        "jokeEn": "Why did the cookie visit the doctor? Because it felt crummy."
+      },
+      {
+        "id": "CJ09",
+        "jokeZh": "鸡蛋为什么不敢讲笑话？因为怕一开口就笑裂了。",
+        "jokeEn": "What cheese is never yours? Nacho cheese."
+      },
+      {
+        "id": "CJ10",
+        "jokeZh": "电脑为什么需要喝咖啡？因为它开了太多程序，快要睡着了。",
+        "jokeEn": "Why did the tomato blush? Because it saw the salad dressing."
+      },
+      {
+        "id": "CJ11",
+        "jokeZh": "电梯最喜欢讲什么笑话？有层次的笑话。",
+        "jokeEn": "Why are elevator jokes so good? They work on many levels."
+      },
+      {
+        "id": "CJ12",
+        "jokeZh": "日历为什么压力很大？因为它的日子都被安排满了。",
+        "jokeEn": "Why can’t a calendar relax? Its days are numbered."
+      },
+      {
+        "id": "CJ13",
+        "jokeZh": "雨伞为什么很有礼貌？因为下雨时，它总会替别人撑场。",
+        "jokeEn": "What do clouds wear under their raincoats? Thunderwear."
+      },
+      {
+        "id": "CJ14",
+        "jokeZh": "面包为什么不喜欢晒太阳？因为它怕变成吐司。",
+        "jokeEn": "Why did the coffee call the police? It got mugged."
+      },
+      {
+        "id": "CJ15",
+        "jokeZh": "手机为什么去睡觉？因为它已经没有电力继续「撑」下去了。",
+        "jokeEn": "Why did the book join the police? It wanted to go undercover."
       }
     ]
   },
