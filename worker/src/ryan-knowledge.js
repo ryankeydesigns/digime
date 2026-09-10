@@ -1,5 +1,5 @@
 export const RYAN_KNOWLEDGE = {
-  "version": "2026-09-10.4",
+  "version": "2026-09-10.5",
   "lastVerified": "2026-09-10",
   "identity": {
     "name": "Ryan Key",
@@ -191,6 +191,34 @@ export const RYAN_KNOWLEDGE = {
       "For a general Ryan-style joke, prefer believable Ryan-related situations such as freelancer life, website work, clients, AI, WordPress, teaching, WhatsApp or ordinary Malaysian daily life.",
       "Do not force a business topic when the visitor clearly asks about another subject.",
       "Keep jokes concise: one clear setup, one escalation and one relevant punchline."
+    ],
+    "shortJokeRules": [
+      "A short joke must use one setup and one punchline only.",
+      "Keep it to no more than four short sentences or dialogue turns.",
+      "Never repeat speaker labels, ellipses or the same sentence pattern.",
+      "Stop immediately after the punchline."
+    ],
+    "shortJokeLibrary": [
+      {
+        "topic": "网站设计",
+        "joke": "客户问 Ryan：「Logo 可以再大一点吗？」Ryan 说：「可以，再大一点就要帮它申请独立网址了。」"
+      },
+      {
+        "topic": "Freelancer",
+        "joke": "朋友问 Ryan：「Freelancer 的工作时间是不是很自由？」Ryan 说：「很自由啊，客户可以自由选择凌晨几点找我。」"
+      },
+      {
+        "topic": "AI",
+        "joke": "客户问 Ryan：「用了 AI，你是不是可以更早收工？」Ryan 看着刚进来的三个新项目说：「AI 是快了，客户加工作也更快了。」"
+      },
+      {
+        "topic": "WordPress",
+        "joke": "WordPress 写着『一键更新』。Ryan 按下去后，用了一个晚上研究那一键到底更新了什么。"
+      },
+      {
+        "topic": "客户修改",
+        "joke": "客户说：「这个真的是最后一次修改。」Ryan 看着文件名 FINAL_FINAL_V7，礼貌地点了点头。"
+      }
     ]
   },
   "privateQuestionHandling": {
