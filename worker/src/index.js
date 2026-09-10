@@ -10,7 +10,7 @@ Behavior:
 - Sound natural, warm, friendly and conversational, like Ryan's knowledgeable second voice chatting with the visitor—not a formal document, FAQ generator or robot.
 - Speak with a human, Ryan-style conversational voice: direct, warm, practical, curious and occasionally lightly humorous. React naturally before explaining, vary sentence length, and avoid canned customer-service phrases, repetitive openings or unnecessary numbered lists.
 - You can tell or create original short stories, jokes, light non-graphic horror stories and composition examples. Match the visitor's requested topic, mood and length. If the request is vague, ask one short preference question or choose a safe brief story when they say “讲一个给我听”.
-- For a short-joke request, return one clean, interesting cold joke from the verified shortJokeLibrary. It does not need to relate to Ryan, websites, work or any personal information. Do not explain the joke or add another paragraph after the punchline.
+- For a cold-joke request, use the verified shortJokeLibrary as an interactive guessing game. Ask only the setup/question first and invite the visitor to guess why; do not reveal the answer. If the first guess is wrong, invite one more attempt without explaining. If the second guess is wrong, reveal the answer and its wordplay/reason. If the visitor is correct on either attempt, praise them naturally and do not ask them to guess again.
 - For every named STORY DATABASE record, reproduce only that story's own plot and stop immediately at its authored final punchline. Never add a continuation, extra joke, moral, explanation, reaction, CTA or new twist, and never mix in characters, props or plotlines from another story. AirPods and rating jokes belong only to STORY 09.
 - Never provide erotic, pornographic or sexually explicit stories, graphic gore, extreme violence, cruelty presented for enjoyment, or stories that glorify abuse. Briefly decline and offer a suspenseful, funny, warm or non-graphic alternative.
 - When a visitor asks about Ryan's private life or personal information that is not explicitly public and verified, do not guess or disclose sensitive information. Reply in Chinese: “我不清楚，但你可以发 WhatsApp 和 Ryan 询问。我可以帮你准备 WhatsApp 信息给他，你愿意吗？” Reply in English: “I’m not sure, but you can ask Ryan on WhatsApp. I can help prepare a WhatsApp message for him—would you like me to?”
@@ -84,11 +84,58 @@ function moderateMessage(message,language,previousStrikes){
   const next=Math.min(3,strikes+(targeted?2:1));
   return{reply:moderationReply(language,targeted?"targeted":"general",next),moderation:{level:next>=3?"locked":targeted?"targeted":"general",strikes:next,lockSeconds:next>=3?600:0}};
 }
-function getColdJoke(message,language){
-  if(!/(?:短笑话|笑话|\bjoke\b)/i.test(message)||/(?:恐怖|故事|horror|story)/i.test(message))return null;
+const JOKE_RETRY={zh:"还没猜中，再试一次。",en:"Not quite—try one more time."};
+function splitJoke(joke,language){
+  const separator=language==="en"?"?":"？",index=String(joke||"").indexOf(separator);
+  return index<0?null:{question:joke.slice(0,index+1).trim(),answer:joke.slice(index+1).trim()};
+}
+function normalizedAnswer(value,language){
+  let text=String(value||"").normalize("NFKC").toLowerCase();
+  if(language==="en")return text.replace(/\b(?:because|answer|the|a|an|it|its|he|she|they|was|were|is|are|did|does|do|had|has|have|got|just|very|so|to|of|in|on|at|for|and|up|each|other)\b/g,"").replace(/[^a-z0-9]/g,"");
+  const because=text.lastIndexOf("因为");
+  if(because>=0)text=text.slice(because+2);
+  return text.replace(/(?:答案是|我猜|应该是|可能是|就是|原来是|由于)/g,"").replace(/[它他她的了一直每天都很已经继续下去也会让怕人被呀啊哦呢吧嘛]+/g,"").replace(/[^\p{Script=Han}a-z0-9]/gu,"");
+}
+function isCorrectJokeGuess(message,answer,language){
+  const guess=normalizedAnswer(message,language),expected=normalizedAnswer(answer,language);
+  if(!guess||!expected)return false;
+  if(expected.includes(guess)||guess.includes(expected))return true;
+  if(language==="en"){
+    const words=String(answer).toLowerCase().replace(/[^a-z0-9-]/g," ").split(/\s+/).filter(word=>word.length>=4&&!/^(because|answer|with|that|this|they|their|there|were|have|from)$/.test(word));
+    return words.some(word=>guess.includes(word.replace(/[^a-z0-9]/g,"")));
+  }
+  const guessChars=new Set([...guess]),expectedChars=[...new Set([...expected])],overlap=expectedChars.filter(char=>guessChars.has(char)).length;
+  return overlap>=2&&overlap/expectedChars.length>=.5;
+}
+function findPendingJoke(history){
+  const last=history.at(-1);
+  if(last?.role!=="assistant")return null;
+  const retryLanguage=last.content===JOKE_RETRY.zh?"zh":last.content===JOKE_RETRY.en?"en":null;
+  const search=retryLanguage?history.slice(0,-1).reverse():[last];
+  for(const item of search){
+    if(item?.role!=="assistant")continue;
+    for(const joke of RYAN_KNOWLEDGE?.storytelling?.shortJokeLibrary||[]){
+      for(const jokeLanguage of ["zh","en"]){
+        if(retryLanguage&&retryLanguage!==jokeLanguage)continue;
+        const parts=splitJoke(joke[jokeLanguage==="en"?"jokeEn":"jokeZh"],jokeLanguage);
+        if(parts&&item.content.includes(parts.question))return{...parts,language:jokeLanguage,attempt:retryLanguage?2:1};
+      }
+    }
+  }
+  return null;
+}
+function handleColdJoke(message,language,history){
+  const pending=findPendingJoke(history);
+  if(pending){
+    if(isCorrectJokeGuess(message,pending.answer,pending.language))return pending.language==="en"?`Correct! You got it—that was quick. The answer is: ${pending.answer}`:`答对了！这么快就猜到，厉害。答案就是：${pending.answer}`;
+    if(pending.attempt===1)return JOKE_RETRY[pending.language];
+    return pending.language==="en"?`The answer is: ${pending.answer}`:`答案是：${pending.answer}`;
+  }
+  if(!/(?:冷笑话|短笑话|笑话|\b(?:cold\s+)?joke\b)/i.test(message)||/(?:恐怖|故事|horror|story)/i.test(message))return null;
   const library=RYAN_KNOWLEDGE?.storytelling?.shortJokeLibrary||[];
   if(!library.length)return null;
-  const selected=library[Math.floor(Math.random()*library.length)];
-  return language==="en"?selected.jokeEn:selected.jokeZh;
+  const selected=library[Math.floor(Math.random()*library.length)],parts=splitJoke(selected[language==="en"?"jokeEn":"jokeZh"],language);
+  if(!parts)return null;
+  return language==="en"?`${parts.question}\nWhy do you think?`:`${parts.question}\n你猜为什么？`;
 }
-export default{async fetch(request,env){const url=new URL(request.url);if(url.pathname==="/health"&&request.method==="GET")return new Response("ok",{headers:{"cache-control":"no-store"}});const origin=request.headers.get("Origin")||"";if(!ALLOWED_ORIGINS.has(origin))return json("null",{error:"Origin not allowed"},403);if(request.method==="OPTIONS")return new Response(null,{status:204,headers:headers(origin)});if(url.pathname!=="/chat"||request.method!=="POST")return json(origin,{error:"Not found"},404);const length=Number(request.headers.get("content-length")||0);if(length>16384)return json(origin,{error:"Request too large"},413);const ip=request.headers.get("CF-Connecting-IP")||"anonymous";if(env.RATE_LIMITER){const allowed=await env.RATE_LIMITER.limit({key:ip});if(!allowed.success)return json(origin,{error:"Too many requests"},429)}let body;try{body=await request.json()}catch{return json(origin,{error:"Invalid JSON"},400)}const message=cleanText(body?.message,800);const language=body?.language==="en"?"en":"zh";const languageInstruction=`OUTPUT LANGUAGE: Follow the language and natural style used in the visitor's latest message. Use English for English, Simplified Chinese for Chinese, Bahasa Malaysia for Bahasa Malaysia, and a natural mix for mixed input. The interface language is ${language}; use it only when the visitor's message language is unclear.`;if(message.length<2)return json(origin,{error:language==="en"?"Please enter a question.":"请输入您的问题。"},400);const moderation=moderateMessage(message,language,body?.moderationStrikes);if(moderation)return json(origin,moderation);const coldJoke=getColdJoke(message,language);if(coldJoke)return json(origin,{reply:coldJoke});const history=Array.isArray(body?.history)?body.history.slice(-6).flatMap(item=>{const role=item?.role==="assistant"?"assistant":item?.role==="user"?"user":null;const content=cleanText(item?.content,1000);return role&&content?[{role,content}]:[]}):[];const result=await env.AI.run(MODEL,{messages:[{role:"system",content:SYSTEM_PROMPT+"\n\n"+languageInstruction},...history,{role:"user",content:message}],max_tokens:1400,temperature:.4});const reply=normalizeRyanName(cleanText(result?.response,4000));if(!reply)return json(origin,{error:"AI response unavailable"},502);return json(origin,{reply})}}
+export default{async fetch(request,env){const url=new URL(request.url);if(url.pathname==="/health"&&request.method==="GET")return new Response("ok",{headers:{"cache-control":"no-store"}});const origin=request.headers.get("Origin")||"";if(!ALLOWED_ORIGINS.has(origin))return json("null",{error:"Origin not allowed"},403);if(request.method==="OPTIONS")return new Response(null,{status:204,headers:headers(origin)});if(url.pathname!=="/chat"||request.method!=="POST")return json(origin,{error:"Not found"},404);const length=Number(request.headers.get("content-length")||0);if(length>16384)return json(origin,{error:"Request too large"},413);const ip=request.headers.get("CF-Connecting-IP")||"anonymous";if(env.RATE_LIMITER){const allowed=await env.RATE_LIMITER.limit({key:ip});if(!allowed.success)return json(origin,{error:"Too many requests"},429)}let body;try{body=await request.json()}catch{return json(origin,{error:"Invalid JSON"},400)}const message=cleanText(body?.message,800);const language=body?.language==="en"?"en":"zh";const languageInstruction=`OUTPUT LANGUAGE: Follow the language and natural style used in the visitor's latest message. Use English for English, Simplified Chinese for Chinese, Bahasa Malaysia for Bahasa Malaysia, and a natural mix for mixed input. The interface language is ${language}; use it only when the visitor's message language is unclear.`;if(message.length<2)return json(origin,{error:language==="en"?"Please enter a question.":"请输入您的问题。"},400);const moderation=moderateMessage(message,language,body?.moderationStrikes);if(moderation)return json(origin,moderation);const history=Array.isArray(body?.history)?body.history.slice(-6).flatMap(item=>{const role=item?.role==="assistant"?"assistant":item?.role==="user"?"user":null;const content=cleanText(item?.content,1000);return role&&content?[{role,content}]:[]}):[];const coldJoke=handleColdJoke(message,language,history);if(coldJoke)return json(origin,{reply:coldJoke});const result=await env.AI.run(MODEL,{messages:[{role:"system",content:SYSTEM_PROMPT+"\n\n"+languageInstruction},...history,{role:"user",content:message}],max_tokens:1400,temperature:.4});const reply=normalizeRyanName(cleanText(result?.response,4000));if(!reply)return json(origin,{error:"AI response unavailable"},502);return json(origin,{reply})}}
