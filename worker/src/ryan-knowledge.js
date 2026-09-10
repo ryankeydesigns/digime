@@ -1,5 +1,7 @@
+import { HORROR_STORIES } from "./horror-stories.js";
+
 export const RYAN_KNOWLEDGE = {
-  "version": "2026-09-10.7",
+  "version": "2026-09-10.8",
   "lastVerified": "2026-09-10",
   "identity": {
     "name": "Ryan Key",
@@ -194,6 +196,16 @@ export const RYAN_KNOWLEDGE = {
       "Never add a moral, sales message or unrelated continuation.",
       "Reply in the visitor's language using the matching Chinese or English version."
     ],
+    "horrorStoryRules": [
+      "Use horrorStoryLibrary for requests such as 恐怖极短篇, 讲恐怖故事, 讲个鬼故事, 有冇鬼故听, scary story or horror story.",
+      "Randomly choose one story per request and do not display its internal ID, database name or sequence number.",
+      "Prefer a story that has not appeared in the current conversation. When the visitor asks for another one, choose a different story whenever possible.",
+      "Tell only the selected story's authored plot and ending. Do not combine stories, add a new twist or immediately explain the ending.",
+      "After the story, ask whether the visitor understood the most frightening point. If the first guess is wrong, invite one more guess; explain only after a second wrong guess.",
+      "Keep the tone like a friend telling a late-night ghost story: short, natural, suspenseful, non-graphic and without comedy or emoji.",
+      "Use Chinese by default, natural Cantonese when the visitor uses Cantonese, and an accurate English retelling when the visitor writes in English."
+    ],
+    "horrorStoryLibrary": HORROR_STORIES,
     "shortJokeLibrary": [
       {
         "id": "CJ01",
