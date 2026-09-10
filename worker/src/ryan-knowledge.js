@@ -1,7 +1,7 @@
 import { HORROR_STORIES } from "./horror-stories.js";
 
 export const RYAN_KNOWLEDGE = {
-  "version": "2026-09-10.8",
+  "version": "2026-09-10.9",
   "lastVerified": "2026-09-10",
   "identity": {
     "name": "Ryan Key",
@@ -201,7 +201,7 @@ export const RYAN_KNOWLEDGE = {
       "Randomly choose one story per request and do not display its internal ID, database name or sequence number.",
       "Prefer a story that has not appeared in the current conversation. When the visitor asks for another one, choose a different story whenever possible.",
       "Tell only the selected story's authored plot and ending. Do not combine stories, add a new twist or immediately explain the ending.",
-      "After the story, ask whether the visitor understood the most frightening point. If the first guess is wrong, invite one more guess; explain only after a second wrong guess.",
+      "End immediately after the selected story's authored final line. Do not ask the visitor why, ask whether they understood it, invite a guess or explain the ending.",
       "Keep the tone like a friend telling a late-night ghost story: short, natural, suspenseful, non-graphic and without comedy or emoji.",
       "Use Chinese by default, natural Cantonese when the visitor uses Cantonese, and an accurate English retelling when the visitor writes in English."
     ],
