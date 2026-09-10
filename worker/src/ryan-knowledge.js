@@ -1,5 +1,5 @@
 export const RYAN_KNOWLEDGE = {
-  "version": "2026-09-10.5",
+  "version": "2026-09-10.6",
   "lastVerified": "2026-09-10",
   "identity": {
     "name": "Ryan Key",
@@ -201,23 +201,56 @@ export const RYAN_KNOWLEDGE = {
     "shortJokeLibrary": [
       {
         "topic": "网站设计",
-        "joke": "客户问 Ryan：「Logo 可以再大一点吗？」Ryan 说：「可以，再大一点就要帮它申请独立网址了。」"
+        "keywords": [
+          "网站",
+          "网页",
+          "website",
+          "web design",
+          "设计"
+        ],
+        "jokeZh": "客户问 Ryan：「Logo 可以再大一点吗？」Ryan 说：「可以，再大一点就要帮它申请独立网址了。」",
+        "jokeEn": "A client asked Ryan, “Can the logo be bigger?” Ryan replied, “Sure—any bigger and it’ll need its own website.”"
       },
       {
         "topic": "Freelancer",
-        "joke": "朋友问 Ryan：「Freelancer 的工作时间是不是很自由？」Ryan 说：「很自由啊，客户可以自由选择凌晨几点找我。」"
+        "keywords": [
+          "freelancer",
+          "自由业",
+          "自由工作"
+        ],
+        "jokeZh": "朋友问 Ryan：「Freelancer 的工作时间是不是很自由？」Ryan 说：「很自由啊，客户可以自由选择凌晨几点找我。」",
+        "jokeEn": "A friend asked Ryan, “Are freelancer hours really flexible?” Ryan said, “Very—clients can freely choose which hour after midnight to message me.”"
       },
       {
         "topic": "AI",
-        "joke": "客户问 Ryan：「用了 AI，你是不是可以更早收工？」Ryan 看着刚进来的三个新项目说：「AI 是快了，客户加工作也更快了。」"
+        "keywords": [
+          "ai",
+          "人工智能"
+        ],
+        "jokeZh": "客户问 Ryan：「用了 AI，你是不是可以更早收工？」Ryan 看着刚进来的三个新项目说：「AI 是快了，客户加工作也更快了。」",
+        "jokeEn": "A client asked Ryan, “Does AI let you finish work earlier?” Ryan looked at three new projects and said, “AI got faster—and so did clients adding work.”"
       },
       {
         "topic": "WordPress",
-        "joke": "WordPress 写着『一键更新』。Ryan 按下去后，用了一个晚上研究那一键到底更新了什么。"
+        "keywords": [
+          "wordpress",
+          "plugin",
+          "插件"
+        ],
+        "jokeZh": "WordPress 写着「一键更新」。Ryan 按下去后，用了一个晚上研究那一键到底更新了什么。",
+        "jokeEn": "WordPress said “one-click update.” Ryan clicked once, then spent the whole night finding out what that one click updated."
       },
       {
         "topic": "客户修改",
-        "joke": "客户说：「这个真的是最后一次修改。」Ryan 看着文件名 FINAL_FINAL_V7，礼貌地点了点头。"
+        "keywords": [
+          "客户",
+          "修改",
+          "client",
+          "customer",
+          "revision"
+        ],
+        "jokeZh": "客户说：「这个真的是最后一次修改。」Ryan 看着文件名 FINAL_FINAL_V7，礼貌地点了点头。",
+        "jokeEn": "The client said, “This is definitely the final revision.” Ryan looked at the file named FINAL_FINAL_V7 and nodded politely."
       }
     ]
   },
