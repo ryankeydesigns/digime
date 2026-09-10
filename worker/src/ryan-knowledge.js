@@ -269,6 +269,131 @@ export const RYAN_KNOWLEDGE = {
         "id": "CJ15",
         "jokeZh": "手机为什么去睡觉？因为它已经没有电力继续「撑」下去了。",
         "jokeEn": "Why did the book join the police? It wanted to go undercover."
+      },
+      {
+        "id": "CJ16",
+        "jokeZh": "香蕉为什么去看医生？因为它觉得自己不太好剥（不好过）。",
+        "jokeEn": "Why did the banana visit the doctor? Because it was not peeling well."
+      },
+      {
+        "id": "CJ17",
+        "jokeZh": "鱼为什么不敢上网？因为怕被网住。",
+        "jokeEn": "Why do fish avoid the internet? Because they are afraid of getting caught in the net."
+      },
+      {
+        "id": "CJ18",
+        "jokeZh": "鞋子为什么总是成双成对？因为它们不喜欢独脚戏。",
+        "jokeEn": "Why do shoes always travel in pairs? Because neither one likes going solo."
+      },
+      {
+        "id": "CJ19",
+        "jokeZh": "月亮为什么不去餐厅？因为它已经满了。",
+        "jokeEn": "Why did the moon skip dinner? Because it was already full."
+      },
+      {
+        "id": "CJ20",
+        "jokeZh": "书本为什么不怕冷？因为它有很多封面可以盖。",
+        "jokeEn": "Why are books never cold? Because they always have covers."
+      },
+      {
+        "id": "CJ21",
+        "jokeZh": "蜘蛛为什么最会做网站？因为它天生就会织网。",
+        "jokeEn": "Why are spiders good web designers? Because they have been building webs all their lives."
+      },
+      {
+        "id": "CJ22",
+        "jokeZh": "铅笔为什么考试特别紧张？因为它不知道该选 2B 还是不 2B。",
+        "jokeEn": "Why was the pencil nervous during the exam? Because it could not decide: 2B or not 2B."
+      },
+      {
+        "id": "CJ23",
+        "jokeZh": "树为什么会用电脑？因为它很会登入（log in）。",
+        "jokeEn": "Why are trees good with computers? Because they know how to log in."
+      },
+      {
+        "id": "CJ24",
+        "jokeZh": "照片为什么被警察抓走？因为它被人框起来了。",
+        "jokeEn": "Why was the photograph arrested? Because it was framed."
+      },
+      {
+        "id": "CJ25",
+        "jokeZh": "饼干为什么可以进入网站？因为它接受了 Cookies。",
+        "jokeEn": "Why did the cookie enter the website? Because it accepted the cookies."
+      },
+      {
+        "id": "CJ26",
+        "jokeZh": "太空人为什么喜欢用电脑？因为键盘上有太空键（Space Bar）。",
+        "jokeEn": "Why do astronauts like computers? Because every keyboard has a space bar."
+      },
+      {
+        "id": "CJ27",
+        "jokeZh": "骷髅为什么没有参加派对？因为它没有人陪，也没有身体去。",
+        "jokeEn": "Why did the skeleton skip the party? Because it had no body to go with."
+      },
+      {
+        "id": "CJ28",
+        "jokeZh": "番茄为什么在赛跑中落后？因为它一直在找番茄酱（catch up）。",
+        "jokeEn": "Why did the tomato fall behind in the race? Because it needed to ketchup."
+      },
+      {
+        "id": "CJ29",
+        "jokeZh": "台灯为什么很会做功课？因为它总有亮点。",
+        "jokeEn": "Why was the lamp good at homework? Because it always had bright ideas."
+      },
+      {
+        "id": "CJ30",
+        "jokeZh": "日历为什么很多人约？因为它每天都有 Date。",
+        "jokeEn": "Why was the calendar so popular? Because it had a date every day."
+      },
+      {
+        "id": "CJ31",
+        "jokeZh": "电池为什么跟朋友绝交？因为双方已经没有电了。",
+        "jokeEn": "Why did the battery end the friendship? Because there was no charge left between them."
+      },
+      {
+        "id": "CJ32",
+        "jokeZh": "火车最喜欢吃什么？它最喜欢嚼嚼（Choo-choo）。",
+        "jokeEn": "What does a train like to eat? Anything it can choo-choo."
+      },
+      {
+        "id": "CJ33",
+        "jokeZh": "海洋为什么很有礼貌？因为它见到人都会挥浪（挥手）。",
+        "jokeEn": "Why is the ocean so friendly? Because it always waves."
+      },
+      {
+        "id": "CJ34",
+        "jokeZh": "面包为什么不认真工作？因为它整天只想混面（混日子）。",
+        "jokeEn": "Why did the bread avoid work? Because it preferred to loaf around."
+      },
+      {
+        "id": "CJ35",
+        "jokeZh": "猫为什么喜欢坐在电脑旁？因为它一直在等滑鼠。",
+        "jokeEn": "Why does the cat sit beside the computer? Because it is waiting for the mouse."
+      },
+      {
+        "id": "CJ36",
+        "jokeZh": "蜜蜂为什么头发黏黏的？因为它用了蜂蜜梳（Honeycomb）。",
+        "jokeEn": "Why does a bee have sticky hair? Because it uses a honeycomb."
+      },
+      {
+        "id": "CJ37",
+        "jokeZh": "时钟为什么常去餐厅？因为它总想要第二份（seconds）。",
+        "jokeEn": "Why did the clock return to the buffet? Because it wanted seconds."
+      },
+      {
+        "id": "CJ38",
+        "jokeZh": "山为什么很会讲笑话？因为它的笑点特别高。",
+        "jokeEn": "Why was the mountain so funny? Because it was hill-arious."
+      },
+      {
+        "id": "CJ39",
+        "jokeZh": "鬼为什么喜欢搭电梯？因为可以提升精神。",
+        "jokeEn": "Why did the ghost take the elevator? Because it wanted to lift its spirits."
+      },
+      {
+        "id": "CJ40",
+        "jokeZh": "橡皮擦为什么越来越瘦？因为它每天都在减字。",
+        "jokeEn": "Why did the eraser get smaller every day? Because every mistake took a little out of it."
       }
     ]
   },
