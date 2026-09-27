@@ -170,7 +170,7 @@ body {
   flex-direction: column;
   min-height: 0 !important;
   overflow: hidden !important;
-  border-top: 1px solid #252525;
+  border: 0 !important;
   background: transparent !important;
 }
 
@@ -206,7 +206,10 @@ body {
   min-height: 0 !important;
   overflow-y: auto !important;
   padding: 20px 0 24px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
   background: transparent !important;
+  box-shadow: none !important;
   scrollbar-color: #333333 transparent !important;
 }
 
@@ -222,6 +225,12 @@ body {
   border-radius: 14px !important;
   color: #ffffff !important;
   box-shadow: none !important;
+}
+
+.message.structured {
+  width: fit-content !important;
+  max-width: min(82%, 680px) !important;
+  padding: 13px 16px !important;
 }
 
 .message.assistant {
@@ -401,6 +410,10 @@ body {
   }
 
   .message {
+    max-width: 90% !important;
+  }
+
+  .message.structured {
     max-width: 90% !important;
   }
 
