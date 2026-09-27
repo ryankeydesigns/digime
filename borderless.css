@@ -1,0 +1,15 @@
+/* Borderless visual system: retain spacing, colour and depth without visible outlines. */
+body *,
+body *::before,
+body *::after {
+  border-width: 0 !important;
+  border-style: none !important;
+  border-color: transparent !important;
+}
+
+/* Keep keyboard navigation visible after removing component borders. */
+body :focus-visible {
+  outline: 2px solid var(--cyan, #168cff) !important;
+  outline-offset: 3px !important;
+}
+
