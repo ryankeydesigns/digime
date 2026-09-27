@@ -31,3 +31,29 @@ body :focus-visible {
   box-shadow: none !important;
 }
 
+/* Remove every decorative surface while keeping one readable page colour. */
+html,
+body {
+  background-color: var(--bg) !important;
+  background-image: none !important;
+}
+
+body::before,
+body::after,
+body *,
+body *::before,
+body *::after {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Filled controls previously used white text; restore readable text when transparent. */
+:where(
+  .send,
+  .message.user,
+  .lang button[aria-pressed="true"],
+  .quick-size button[aria-pressed="true"]
+) {
+  color: var(--text) !important;
+}
+
