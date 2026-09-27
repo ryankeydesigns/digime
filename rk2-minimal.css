@@ -24,7 +24,7 @@ body {
 }
 
 .page {
-  width: min(100% - 48px, 1040px) !important;
+  width: min(100% - 48px, 1240px) !important;
   margin: 0 auto;
   padding: 28px 0 40px !important;
 }
@@ -132,12 +132,13 @@ body {
 }
 
 .intro p {
-  max-width: 650px !important;
+  max-width: none !important;
   margin: 34px 0 0 !important;
   color: #b0b0b0 !important;
   font-size: 18pt !important;
   font-weight: 450 !important;
   line-height: 1.65 !important;
+  white-space: nowrap !important;
 }
 
 .home-link {
@@ -370,6 +371,7 @@ body {
   .intro p {
     margin-top: 28px !important;
     font-size: 18pt !important;
+    white-space: normal !important;
   }
 
   .chat {
