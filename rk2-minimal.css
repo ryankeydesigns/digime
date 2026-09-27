@@ -359,7 +359,7 @@ body {
   }
 
   .intro h1 {
-    font-size: clamp(68px, 24vw, 100px) !important;
+    display: none !important;
   }
 
   .intro h1 span {
