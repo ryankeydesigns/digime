@@ -13,3 +13,21 @@ body :focus-visible {
   outline-offset: 3px !important;
 }
 
+/* Flatten every card surface so content sits directly on the page. */
+:where(
+  .action,
+  .contact,
+  .social,
+  .review-card,
+  .client-card,
+  .experience-card,
+  .package-card,
+  .extra-service-card,
+  .dev-project-card,
+  .hero-roles,
+  .message
+) {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
