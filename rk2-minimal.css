@@ -142,7 +142,7 @@ body {
   max-width: none !important;
   margin: 34px 0 0 !important;
   color: #b0b0b0 !important;
-  font-size: 16pt !important;
+  font-size: 14pt !important;
   font-weight: 450 !important;
   line-height: 1.65 !important;
   white-space: nowrap !important;
@@ -210,7 +210,12 @@ body {
   border-radius: 0 !important;
   background: transparent !important;
   box-shadow: none !important;
-  scrollbar-color: #333333 transparent !important;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.messages::-webkit-scrollbar {
+  display: none;
 }
 
 .messages:empty {
@@ -393,7 +398,7 @@ body {
 
   .intro p {
     margin-top: 28px !important;
-    font-size: 16pt !important;
+    font-size: 14pt !important;
     white-space: normal !important;
   }
 
