@@ -24,9 +24,14 @@ body {
 }
 
 .page {
+  display: flex;
+  flex-direction: column;
   width: min(100% - 48px, 1240px) !important;
+  height: 100dvh;
+  min-height: 100dvh;
+  overflow: hidden;
   margin: 0 auto;
-  padding: 28px 0 40px !important;
+  padding: 28px 0 18px !important;
 }
 
 .topbar {
@@ -86,10 +91,12 @@ body {
 }
 
 .shell {
-  display: block !important;
+  display: flex !important;
+  flex: 1;
+  flex-direction: column;
   min-height: 0 !important;
   height: auto !important;
-  overflow: visible !important;
+  overflow: hidden !important;
   border: 0 !important;
   border-radius: 0 !important;
   background: transparent !important;
@@ -100,7 +107,7 @@ body {
   position: relative;
   display: block !important;
   min-height: 0 !important;
-  padding: 30px 0 clamp(52px, 8vw, 88px) !important;
+  padding: 30px 0 28px !important;
   border: 0 !important;
   background: transparent !important;
 }
@@ -135,7 +142,7 @@ body {
   max-width: none !important;
   margin: 34px 0 0 !important;
   color: #b0b0b0 !important;
-  font-size: 18pt !important;
+  font-size: 16pt !important;
   font-weight: 450 !important;
   line-height: 1.65 !important;
   white-space: nowrap !important;
@@ -158,10 +165,11 @@ body {
 }
 
 .chat {
-  display: grid !important;
-  grid-template-rows: minmax(340px, 1fr) auto !important;
-  min-height: 620px !important;
-  overflow: visible !important;
+  display: flex !important;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0 !important;
+  overflow: hidden !important;
   border-top: 1px solid #252525;
   background: transparent !important;
 }
@@ -193,11 +201,17 @@ body {
 }
 
 .messages {
-  grid-row: 1 !important;
-  min-height: 340px !important;
-  padding: 20px 0 40px !important;
+  order: 1;
+  flex: 1;
+  min-height: 0 !important;
+  overflow-y: auto !important;
+  padding: 20px 0 24px !important;
   background: transparent !important;
   scrollbar-color: #333333 transparent !important;
+}
+
+.messages:empty {
+  display: none !important;
 }
 
 .message {
@@ -245,7 +259,7 @@ body {
 }
 
 .composer {
-  grid-row: 2 !important;
+  order: 2;
   position: sticky !important;
   left: auto !important;
   right: auto !important;
@@ -335,7 +349,7 @@ body {
 @media (max-width: 720px) {
   .page {
     width: calc(100% - 28px) !important;
-    padding: 14px 0 var(--composer-height, 170px) !important;
+    padding: 14px 0 0 !important;
   }
 
   .topbar {
@@ -356,7 +370,7 @@ body {
   }
 
   .intro {
-    padding: 30px 0 58px !important;
+    padding: 30px 0 32px !important;
   }
 
   .intro h1 {
@@ -370,13 +384,12 @@ body {
 
   .intro p {
     margin-top: 28px !important;
-    font-size: 18pt !important;
+    font-size: 16pt !important;
     white-space: normal !important;
   }
 
   .chat {
-    min-height: 560px !important;
-    grid-template-rows: minmax(300px, 1fr) !important;
+    min-height: 0 !important;
   }
 
   .chat-head {
