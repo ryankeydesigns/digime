@@ -1,4 +1,4 @@
-# Ryan — search and AI crawler policy
+# Ryan - search and AI crawler policy
 # Allow indexing and AI-assisted retrieval, but reserve content from model training.
 
 User-agent: *
